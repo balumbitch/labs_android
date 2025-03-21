@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnGoToCalculator"
+        android:layout_width="126dp"
+        android:layout_height="72dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="60dp"
+        android:text="Calculator" />
+
+    <Button
+        android:id="@+id/btnGoToMP3"
+        android:layout_width="126dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="160dp"
+        android:text="MP3" />
+</RelativeLayout>

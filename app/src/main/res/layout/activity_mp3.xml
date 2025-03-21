@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvSongTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Now Playing: Song Title"
+        android:textSize="18sp"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnPlay"
+        android:layout_width="105dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="150dp"
+        android:text="Play" />
+
+    <Button
+        android:id="@+id/btnPreview"
+        android:layout_width="105dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="450dp"
+        android:text="Preview" />
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="105dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="260dp"
+        android:text="Next" />
+
+    <Button
+        android:id="@+id/btnLoop"
+        android:layout_width="105dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="520dp"
+        android:layout_marginLeft="150dp"
+        android:text="Cycle" />
+
+</RelativeLayout>
