@@ -15,7 +15,7 @@ class MP3 : AppCompatActivity() {
     private lateinit var btnNext: Button
     private lateinit var btnLoop: Button
 
-    private val songs = listOf(R.raw.song1, R.raw.song2, R.raw.song3) // Добавьте свои MP3-файлы в res/raw
+    private val songs = listOf(R.raw.song1, R.raw.song2, R.raw.song3)
     private var currentSongIndex = 0
     private var isLooping = false
 
