@@ -16,5 +16,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, Calculator::class.java)
             startActivity(intent)
         }
+
+        val btnGoToMP3: Button = findViewById(R.id.btnGoToMP3)
+        btnGoToMP3.setOnClickListener {
+            val intent = Intent(this, MP3::class.java)
+            startActivity(intent)
+        }
     }
 }

@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- TextView для отображения названия трека -->
     <TextView
         android:id="@+id/tvSongTitle"
         android:layout_width="wrap_content"
@@ -13,6 +14,17 @@
         android:layout_centerHorizontal="true"
         android:textStyle="bold" />
 
+    <!-- SeekBar для перемотки трека -->
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@id/tvSongTitle" />
+
+    <!-- Кнопка Play -->
     <Button
         android:id="@+id/btnPlay"
         android:layout_width="105dp"
@@ -21,6 +33,7 @@
         android:layout_marginLeft="150dp"
         android:text="Play" />
 
+    <!-- Кнопка Preview -->
     <Button
         android:id="@+id/btnPreview"
         android:layout_width="105dp"
@@ -29,6 +42,7 @@
         android:layout_marginTop="450dp"
         android:text="Preview" />
 
+    <!-- Кнопка Next -->
     <Button
         android:id="@+id/btnNext"
         android:layout_width="105dp"
@@ -37,12 +51,31 @@
         android:layout_marginLeft="260dp"
         android:text="Next" />
 
+    <!-- Кнопка Cycle -->
     <Button
         android:id="@+id/btnLoop"
         android:layout_width="105dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginTop="520dp"
         android:layout_marginLeft="150dp"
-        android:text="Cycle" />
+        android:text="Cycle: Off" />
+
+    <!-- Кнопка Увеличить громкость -->
+    <Button
+        android:id="@+id/btnVolumeUp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="520dp"
+        android:layout_marginLeft="260dp"
+        android:text="+" />
+
+    <!-- Кнопка Уменьшить громкость -->
+    <Button
+        android:id="@+id/btnVolumeDown"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="520dp"
+        android:layout_marginLeft="80dp"
+        android:text="-" />
 
 </RelativeLayout>
