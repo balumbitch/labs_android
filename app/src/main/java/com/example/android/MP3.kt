@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MP3 : AppCompatActivity() {
 
-    // Элементы интерфейса
     private lateinit var tvSongTitle: TextView
     private lateinit var seekBar: SeekBar
     private lateinit var btnPlay: Button
@@ -22,16 +21,13 @@ class MP3 : AppCompatActivity() {
     private lateinit var btnVolumeUp: Button
     private lateinit var btnVolumeDown: Button
 
-    // Медиаплеер и управление громкостью
     private lateinit var mediaPlayer: MediaPlayer
     private lateinit var audioManager: AudioManager
 
-    // Список песен и их названий
     private val songs = listOf(R.raw.stardew, R.raw.festival)
     private val songTitles = listOf("Stardew", "Festival")
     private var currentSongIndex = 0
 
-    // Для обновления SeekBar
     private lateinit var handler: Handler
     private lateinit var updateSeekBar: Runnable
 
@@ -39,19 +35,14 @@ class MP3 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mp3)
 
-        // Находим все элементы интерфейса
         findViews()
 
-        // Инициализация AudioManager
         audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
 
-        // Инициализация MediaPlayer
         initializeMediaPlayer()
 
-        // Настройка SeekBar
         setupSeekBar()
 
-        // Настройка кнопок
         setupButtons()
     }
 
