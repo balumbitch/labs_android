@@ -12,49 +12,41 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MP3 : AppCompatActivity() {
 
-    private lateinit var tvSongTitle: TextView
-    private lateinit var seekBar: SeekBar
-    private lateinit var btnPlay: Button
-    private lateinit var btnPreview: Button
-    private lateinit var btnNext: Button
-    private lateinit var btnLoop: Button
-    private lateinit var btnVolumeUp: Button
-    private lateinit var btnVolumeDown: Button
-
+    private lateinit var songname: TextView
+    private lateinit var seekbar: SeekBar
+    private lateinit var play: Button
+    private lateinit var back: Button
+    private lateinit var next: Button
+    private lateinit var cycle: Button
+    private lateinit var volumeup: Button
+    private lateinit var volumedown: Button
     private lateinit var mediaPlayer: MediaPlayer
     private lateinit var audioManager: AudioManager
-
     private val songs = listOf(R.raw.stardew, R.raw.festival)
     private val songTitles = listOf("Stardew", "Festival")
     private var currentSongIndex = 0
-
     private lateinit var handler: Handler
     private lateinit var updateSeekBar: Runnable
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mp3)
-
         findViews()
-
         audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
-
         initializeMediaPlayer()
-
         setupSeekBar()
-
         setupButtons()
     }
 
     private fun findViews() {
-        tvSongTitle = findViewById(R.id.tvSongTitle)
-        seekBar = findViewById(R.id.seekBar)
-        btnPlay = findViewById(R.id.btnPlay)
-        btnPreview = findViewById(R.id.btnPreview)
-        btnNext = findViewById(R.id.btnNext)
-        btnLoop = findViewById(R.id.btnLoop)
-        btnVolumeUp = findViewById(R.id.btnVolumeUp)
-        btnVolumeDown = findViewById(R.id.btnVolumeDown)
+        songname = findViewById(R.id.songname)
+        seekbar = findViewById(R.id.seekbar)
+        play = findViewById(R.id.play)
+        back = findViewById(R.id.back)
+        next = findViewById(R.id.next)
+        cycle = findViewById(R.id.cycle)
+        volumeup = findViewById(R.id.volumeup)
+        volumedown = findViewById(R.id.volumedown)
     }
 
     private fun initializeMediaPlayer() {
@@ -63,19 +55,19 @@ class MP3 : AppCompatActivity() {
     }
 
     private fun updateSongTitle() {
-        tvSongTitle.text = "Now Playing: ${songTitles[currentSongIndex]}"
+        songname.text = "Now Playing: ${songTitles[currentSongIndex]}"
     }
 
     private fun setupSeekBar() {
-        seekBar.max = mediaPlayer.duration
+        seekbar.max = mediaPlayer.duration
         handler = Handler()
         updateSeekBar = Runnable {
-            seekBar.progress = mediaPlayer.currentPosition
+            seekbar.progress = mediaPlayer.currentPosition
             handler.postDelayed(updateSeekBar, 1000)
         }
         handler.post(updateSeekBar)
 
-        seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        seekbar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 if (fromUser) {
                     mediaPlayer.seekTo(progress)
@@ -88,30 +80,30 @@ class MP3 : AppCompatActivity() {
     }
 
     private fun setupButtons() {
-        btnPlay.setOnClickListener {
+        play.setOnClickListener {
             if (!mediaPlayer.isPlaying) {
                 mediaPlayer.start()
-                btnPlay.text = "Pause"
+                play.text = "pause"
             } else {
                 mediaPlayer.pause()
-                btnPlay.text = "Play"
+                play.text = "play"
             }
         }
 
-        btnPreview.setOnClickListener {
+        back.setOnClickListener {
             playPreviousSong()
         }
 
-        btnNext.setOnClickListener {
+        next.setOnClickListener {
             playNextSong()
         }
 
-        btnLoop.setOnClickListener {
+        cycle.setOnClickListener {
             mediaPlayer.isLooping = !mediaPlayer.isLooping
-            btnLoop.text = if (mediaPlayer.isLooping) "Cycle: On" else "Cycle: Off"
+            cycle.text = if (mediaPlayer.isLooping) "cycle: on" else "cycle: off"
         }
 
-        btnVolumeUp.setOnClickListener {
+        volumeup.setOnClickListener {
             audioManager.adjustStreamVolume(
                 AudioManager.STREAM_MUSIC,
                 AudioManager.ADJUST_RAISE,
@@ -119,7 +111,7 @@ class MP3 : AppCompatActivity() {
             )
         }
 
-        btnVolumeDown.setOnClickListener {
+        volumedown.setOnClickListener {
             audioManager.adjustStreamVolume(
                 AudioManager.STREAM_MUSIC,
                 AudioManager.ADJUST_LOWER,
@@ -150,9 +142,9 @@ class MP3 : AppCompatActivity() {
         mediaPlayer.reset()
         mediaPlayer = MediaPlayer.create(this, songs[currentSongIndex])
         mediaPlayer.start()
-        btnPlay.text = "Pause"
+        play.text = "pause"
         updateSongTitle()
-        seekBar.max = mediaPlayer.duration
+        seekbar.max = mediaPlayer.duration
     }
 
     override fun onDestroy() {

@@ -4,58 +4,58 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tvSongTitle"
+        android:id="@+id/songname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Now Playing: Song Title"
+        android:text="Now Playing: songname"
         android:textSize="18sp"
         android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
         android:textStyle="bold" />
 
     <SeekBar
-        android:id="@+id/seekBar"
+        android:id="@+id/seekbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_below="@id/tvSongTitle" />
+        android:layout_below="@id/songname" />
 
     <Button
-        android:id="@+id/btnPlay"
+        android:id="@+id/play"
         android:layout_width="105dp"
         android:layout_height="50dp"
         android:layout_marginTop="450dp"
         android:layout_marginLeft="150dp"
-        android:text="Play" />
+        android:text="play" />
 
     <Button
-        android:id="@+id/btnPreview"
+        android:id="@+id/back"
         android:layout_width="105dp"
         android:layout_height="50dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="450dp"
-        android:text="Preview" />
+        android:text="back" />
 
     <Button
-        android:id="@+id/btnNext"
+        android:id="@+id/next"
         android:layout_width="105dp"
         android:layout_height="50dp"
         android:layout_marginTop="450dp"
         android:layout_marginLeft="260dp"
-        android:text="Next" />
+        android:text="next" />
 
     <Button
-        android:id="@+id/btnLoop"
+        android:id="@+id/cycle"
         android:layout_width="105dp"
         android:layout_height="60dp"
         android:layout_marginTop="520dp"
         android:layout_marginLeft="150dp"
-        android:text="Cycle: Off" />
+        android:text="cycle" />
 
     <Button
-        android:id="@+id/btnVolumeUp"
+        android:id="@+id/volumeup"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="520dp"
@@ -63,7 +63,7 @@
         android:text="+" />
 
     <Button
-        android:id="@+id/btnVolumeDown"
+        android:id="@+id/volumedown"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="520dp"
