@@ -18,4 +18,20 @@
         android:layout_marginTop="60dp"
         android:layout_marginLeft="160dp"
         android:text="MP3" />
+
+    <Button
+        android:id="@+id/btnGoToGPS"
+        android:layout_width="126dp"
+        android:layout_height="72dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="150dp"
+        android:text="GPS" />
+
+    <Button
+        android:id="@+id/btnGoToCellularInfo"
+        android:layout_width="126dp"
+        android:layout_height="72dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="150dp"
+        android:text="Cellular Info" />
 </RelativeLayout>
